@@ -3,7 +3,7 @@
 #include "master.h"
 
 
-#define RUN_MASTER
+#define RUN_SLAVE
 
 #ifdef RUN_MASTER
 void setup() {
