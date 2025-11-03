@@ -1,12 +1,26 @@
-#include "SlaveBluetooth.h" 
-#include "MasterBluetooth.h" 
+#include <Arduino.h>
+#include "slave.h"
+#include "master.h"
 
+// CHOOSE YOUR MODE:
+// Uncomment only one of the following lines
+#define RUN_SLAVE
+// #define RUN_MASTER
+
+#ifdef RUN_MASTER
 void setup() {
-  setupSlaveBluetooth();
-  // setupSlaveBluetooth();
+  setupMaster();
 }
-
 void loop() {
-  loopSlaveBluetooth();
-  // loopSlaveBluetooth();
+  loopMaster();
 }
+#endif
+
+#ifdef RUN_SLAVE
+void setup() {
+  setupSlave();
+}
+void loop() {
+  loopSlave();
+}
+#endif
