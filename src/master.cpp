@@ -1,12 +1,9 @@
 #include <Arduino.h>
 #include <BluetoothSerial.h>
-// "master.h" não é necessário se todo o código estiver aqui
-// #include "master.h" 
 
 BluetoothSerial BTSerial;
 
-// --- Configuração do Botão ---
-int buttonPin = 4;
+int buttonPin = 22;
 int lastButtonState = HIGH;      
 unsigned long pressStartTime = 0; 
 bool longPressSent = false;     
@@ -71,7 +68,7 @@ void loopMaster(){
         if (!longPressSent && (millis() - pressStartTime > LONG_PRESS_TIME)) {
             Serial.println("Enviando: LONG_PRESS");
             BTSerial.println("LONG_PRESS");
-            longPressSent = true; // Marca como enviado para não repetir
+            longPressSent = true; 
         }
     }
 

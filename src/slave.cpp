@@ -3,7 +3,7 @@
 #include "led.h"
 #include "slave.h"
 
-int mainLedPin = 26;
+int mainLedPin = 5;
 BluetoothSerial BTSlave;
 
 enum LedState {
